@@ -1,15 +1,25 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/colors'
+import { Conta } from "./model/Conta"; // importando a classe conta para dentro do projeto
 
 //criação da função main
 export function main() {
 
     let opcao: number
 
+// Objeto da classe "Contas", isso fará com que possa visualizar os dados no terminal
+    const conta: Conta = new Conta(1, 123, 1, "Adriana", 10000);
+    conta.visualizar();
+    conta.sacar(10500); // primeira visualização vai dar "saldo insulficiente"
+    conta.visualizar(); // Visualiza quanto tem na conta
+    conta.depositar(5000); // Aqui deposita um valor
+    conta.visualizar(); // nessa opção será visualizado todos os dados da conta novamente com saldo atualizado
+
+
     while (true) {
 
         //Apenas para imprimir o menu na tela
-        console.log("*****************************************************");
+        console.log(colors.fg.blue,"*****************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
         console.log("                                                     ");
@@ -26,7 +36,7 @@ export function main() {
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
-        console.log("                                                     ");
+        console.log("                                                     ",colors.reset);
 
         // para aparecer a opção de digitar no terminal
         console.log('Qual a opção desejada') // usa o console.log primeiro para conseguir deixa-lo com pontuação
