@@ -1,20 +1,37 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/colors'
 import { Conta } from "./model/Conta"; // importando a classe conta para dentro do projeto
+import { ContaCorrente} from "./model/ContaCorrente";
+import { ContaPoupanca } from "./model/ContaPoupanc";
 
 //criação da função main
 export function main() {
 
     let opcao: number
 
-// Objeto da classe "Contas", isso fará com que possa visualizar os dados no terminal
-    const conta: Conta = new Conta(1, 123, 1, "Adriana", 10000);
-    conta.visualizar();
-    conta.sacar(10500); // primeira visualização vai dar "saldo insulficiente"
-    conta.visualizar(); // Visualiza quanto tem na conta
-    conta.depositar(5000); // Aqui deposita um valor
-    conta.visualizar(); // nessa opção será visualizado todos os dados da conta novamente com saldo atualizado
+// // Objeto da classe "Contas", isso fará com que possa visualizar os dados no terminal (agora a classe é abstrata, não consigo mais colocala no código)
+//     const conta: Conta = new Conta(1, 123, 1, "Adriana", 10000);
+//     conta.visualizar();
+//     conta.sacar(10500); // primeira visualização vai dar "saldo insulficiente"
+//     conta.visualizar(); // Visualiza quanto tem na conta
+//     conta.depositar(5000); // Aqui deposita um valor
+//     conta.visualizar(); // nessa opção será visualizado todos os dados da conta novamente com saldo atualizado
 
+// Teste conta Corrente (não esquece de importar a classe para o projeto)
+    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
+    contacorrente.visualizar();
+    contacorrente.sacar(2000);
+    contacorrente.visualizar();
+    contacorrente.depositar(1000);
+    contacorrente.visualizar();
+
+// Teste conta poupança
+    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
+    contapoupanca.visualizar();
+    contapoupanca.sacar(200);
+    contapoupanca.visualizar();
+    contapoupanca.depositar(1000);
+    contapoupanca.visualizar();
 
     while (true) {
 

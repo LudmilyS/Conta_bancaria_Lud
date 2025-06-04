@@ -1,6 +1,6 @@
 
 // Criando os atributos da classe
-export class Conta {
+export abstract class Conta {
     private _numero: number
     private _agencia: number
     private _tipo: number
