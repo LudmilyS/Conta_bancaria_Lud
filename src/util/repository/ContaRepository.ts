@@ -4,7 +4,7 @@ export interface ContaRepository {
 
 	// CRUD (criar, listar todas, consultar pelo numero, atualizar e deletar) da Conta
     // Estes Métodos serão implementados na Classe ContaController
-	procurarPorNumero(numero: number): void;
+	procurarPorNumero(numero: number): void; //assinatura do método
 	listarTodas(): void;
 	cadastrar(conta: Conta): void;
 	atualizar(conta: Conta): void;
