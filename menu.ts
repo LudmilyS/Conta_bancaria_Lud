@@ -17,8 +17,7 @@ export function main() {
     const tipoContas = ['Conta Corrente', 'Conta Poupanca'] //criação de um array que irá conter o tipo de conta que o banco oferece
 
 //criado para simplifivcar os testes, já que não temos ainda um banco de dados
-    console.log("\nCriar Contas\n");
-
+    
 let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
 contas.cadastrar(cc1);
 
@@ -31,7 +30,7 @@ contas.cadastrar(cp1);
 let cp2: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Juliana Ramos", 8000, 15);
 contas.cadastrar(cp2);
 
-contas.listarTodas();
+
 
 
 // // Objeto da classe "Contas", isso fará com que possa visualizar os dados no terminal (agora a classe é abstrata, não consigo mais colocala no código)
